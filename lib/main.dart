@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:projecr_food_app/auth/login_or_register.dart';
+import 'package:projecr_food_app/models/restaurant.dart';
 
 import 'package:projecr_food_app/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context)=>ThemeProvider(),
-      child: const MyApp(),
-      )
+   MultiProvider(providers:[
+    //theme provider
+      ChangeNotifierProvider(create: (context)=> ThemeProvider()),
+    //restaurant provider
+    ChangeNotifierProvider(create: (context)=> Restaurant()),
+   ],
+   // ignore: prefer_const_constructors
+   child: MyApp(),
+   ),
   );
 }
 

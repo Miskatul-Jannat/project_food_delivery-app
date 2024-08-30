@@ -20,20 +20,7 @@ class MyTabBar extends StatelessWidget {
     return Container(
       child: TabBar(
         controller: tabController,
-        tabs: const [
-          //1st tab
-            Tab(
-              icon: Icon(Icons.home),
-            ),
-          //2nd tab
-            Tab(
-              icon: Icon(Icons.settings),
-            ),
-             //3rd tab
-            Tab(
-              icon: Icon(Icons.person),
-            ),
-        ],
+        tabs: _buildCategoryTab(),
         ),
     );
   }

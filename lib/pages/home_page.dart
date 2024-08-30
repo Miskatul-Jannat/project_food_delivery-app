@@ -8,6 +8,8 @@ import 'package:projecr_food_app/components/my_drawer.dart';
 import 'package:projecr_food_app/components/my_silver_app_bar.dart';
 import 'package:projecr_food_app/components/my_tab_bar.dart';
 import 'package:projecr_food_app/models/food.dart';
+import 'package:projecr_food_app/models/restaurant.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,6 +35,30 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   super.dispose();
 
  } 
+
+ //sort out and return a list of food items that belong to the specific category
+ List<Food> _filterMenuByCategory(FoodCategory category, List<Food> fullMenu){
+  return fullMenu.where((food) => food.category == category).toList();
+ }
+
+ // retun list of foods in given category
+
+ List<Widget> getFoodInThisCategory(List<Food> fullMenu){
+  return FoodCategory.values.map((category){
+    List<Food> categoryMenu = _filterMenuByCategory(category, fullMenu);
+
+  return ListView.builder(
+    itemCount: categoryMenu.length,
+    physics: const NeverScrollableScrollPhysics(),
+    itemBuilder: (context, index) {
+      return ListTile(
+          title: Text(categoryMenu[index].name),
+      );
+    },
+    
+    );
+ }).toList();
+ }
 
   @override
   Widget build(BuildContext context) {
@@ -60,31 +86,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ),
         ),
       ],
-      body: TabBarView(
+      body: Consumer<Restaurant>(
+        builder: (context,restaurant,child) => TabBarView(
         controller: _tabController,
-        children:[
-          ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context,index) => const Text("first tab items"),
-            ),
-            ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context,index) => const Text("second tab items"),
-            ),
-            ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context,index) => const Text("third tab items"),
-            ),
-            ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context,index) => const Text("4th tab items"),
-            ),
-            ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context,index) => const Text("5th tab items"),
-            ),
-        ],
+        children:getFoodInThisCategory(restaurant.menu),
         ),
+      ),
       ),
     );
   }
