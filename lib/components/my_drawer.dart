@@ -1,30 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:projecr_food_app/components/my_deawer_tile.dart';
+import 'package:projecr_food_app/components/settings_page.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
+    return  Drawer(
       // ignore: deprecated_member_use
-      backgroundColor:Color.fromARGB(255, 245, 239, 239),
+      backgroundColor:Theme.of(context).colorScheme.background,
       child: Column(
         children: [
           //app logo
         Padding(
-          padding: EdgeInsets.only(top: 100.0),
+          padding: const EdgeInsets.only(top: 100.0),
           child: Icon(
             Icons.lock_open_rounded,
-            size: 40,
+            size: 80,
+            color: Theme.of(context).colorScheme.inversePrimary,
           ),
-        )
-          //home list tile
+        ),
 
+        Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Divider(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+        ),
+          //home list tile
+        MyDrawerTile(
+          text: "H O M E",
+          icon: Icons.home,
+          onTap: () =>Navigator.pop(context),
+          ),
 
           //settings list tile
+           MyDrawerTile(
+          text: "S E T T I N G S",
+          icon: Icons.settings,
+          onTap: (){
+           Navigator.pop(context);
+           Navigator.push(context, MaterialPageRoute(builder: (context)=> const SettingsPage(),)); 
+          },
+          ),
 
-
-          //logout list tile
+          const Spacer(),
+           //logout list tile
+          MyDrawerTile(
+          text: "L O G O U T",
+          icon: Icons.login,
+          onTap: (){},
+          ),
+         
+         const SizedBox(height: 25,),
         ],
       ),
     );

@@ -24,7 +24,11 @@ class _LoginPageState extends State<LoginPage> {
     //fill out athentications....
 
     //navigator to home page
-    Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage(),));
+    Navigator.push(
+      context,
+       MaterialPageRoute(
+        builder: (context)=> const HomePage(),
+        ));
   }
 
   @override
