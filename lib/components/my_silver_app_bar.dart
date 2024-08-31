@@ -25,7 +25,7 @@ class MySilverAppBar extends StatelessWidget {
       ],
       backgroundColor: Theme.of(context).colorScheme.background,
       foregroundColor: Theme.of(context).colorScheme.inversePrimary,
-      title: const Text("Sunset dinner"),
+      title: const Text("Khabo Ki",style: TextStyle(color: Colors.blue,fontSize: 25,fontWeight: FontWeight.bold),),
       
       flexibleSpace: FlexibleSpaceBar(
        background: Padding(

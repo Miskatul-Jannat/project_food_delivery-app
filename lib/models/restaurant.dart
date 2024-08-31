@@ -65,9 +65,9 @@ class Restaurant extends ChangeNotifier {
      Food(
       name: "Caeser salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/salads/greek.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.salads,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -76,9 +76,9 @@ class Restaurant extends ChangeNotifier {
         Food(
       name: "Cobb salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/cobb.jpg",
+      imagePath: "lib/images/salads/greek.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.salads,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -89,7 +89,7 @@ class Restaurant extends ChangeNotifier {
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
       imagePath: "lib/images/salads/greek.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.salads,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -100,7 +100,7 @@ class Restaurant extends ChangeNotifier {
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
       imagePath: "lib/images/salads/italian.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.salads,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -111,7 +111,7 @@ class Restaurant extends ChangeNotifier {
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
       imagePath: "lib/images/salads/nicase.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.salads,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -119,11 +119,11 @@ class Restaurant extends ChangeNotifier {
        ]),
     //desserts
      Food(
-      name: "Caeser salad",
+      name: "Pie",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/desserts/pie.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.desserts,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -132,9 +132,9 @@ class Restaurant extends ChangeNotifier {
         Food(
       name: "Caeser salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/desserts/pie.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.desserts,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -143,9 +143,9 @@ class Restaurant extends ChangeNotifier {
         Food(
       name: "Caeser salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/desserts/pie.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.desserts,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -154,9 +154,9 @@ class Restaurant extends ChangeNotifier {
         Food(
       name: "Caeser salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/desserts/pie.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.desserts,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -165,9 +165,9 @@ class Restaurant extends ChangeNotifier {
         Food(
       name: "Caeser salad",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/desserts/pie.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.desserts,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
@@ -176,60 +176,118 @@ class Restaurant extends ChangeNotifier {
 
     //drinks
      Food(
-      name: "Caeser salad",
+      name: "Hot chocolate",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/drinks/hotchoclate.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.drink,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
       Addon(name: "Avocado", price: 2.99),
        ]),
         Food(
-      name: "Caeser salad",
+      name: "Juice",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/drinks/Juice.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.drink,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
       Addon(name: "Avocado", price: 2.99),
        ]),
         Food(
-      name: "Caeser salad",
+      name: "Mocktaul",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/drinks/mocktail.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.drink,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
       Addon(name: "Avocado", price: 2.99),
        ]),
         Food(
-      name: "Caeser salad",
+      name: "Soft drinks",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/drinks/softdrink.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.drink,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
       Addon(name: "Avocado", price: 2.99),
        ]),
         Food(
-      name: "Caeser salad",
+      name: "Sperkling water",
       description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
-      imagePath: "lib/images/salads/carsar.jpg",
+      imagePath: "lib/images/drinks/water.jpg",
       price: 0.9,
-      category: FoodCategory.burgers,
+      category: FoodCategory.drink,
       availableAddons:[
       Addon(name: "Extra chesse", price: 0.99),
       Addon(name: "Bacon", price: 1.99),
       Addon(name: "Avocado", price: 2.99),
        ]),
+
+       //sides 
+       Food(
+      name: "Achar",
+      description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
+      imagePath: "lib/images/sides/bokchoi.jpg",
+      price: 0.9,
+      category: FoodCategory.sides,
+      availableAddons:[
+      Addon(name: "Extra chesse", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+       ]),
+        Food(
+      name: "Bok choi",
+      description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
+      imagePath: "lib/images/sides/bokchoi.jpg",
+      price: 0.9,
+      category: FoodCategory.sides,
+      availableAddons:[
+      Addon(name: "Extra chesse", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+       ]),
+        Food(
+      name: "Brown Rice",
+      description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
+      imagePath: "lib/images/sides/bokchoi.jpg",
+      price: 0.9,
+      category: FoodCategory.sides,
+      availableAddons:[
+      Addon(name: "Extra chesse", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+       ]),
+        Food(
+      name: "Kimchi",
+      description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
+      imagePath: "lib/images/desserts/pie.jpg",
+      price: 0.9,
+      category: FoodCategory.sides,
+      availableAddons:[
+      Addon(name: "Extra chesse", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+       ]),
+        Food(
+      name: "Roasted potato",
+      description: "A juicy beef burger with melted cheddar,lettuse,tomato,and a hint of onion and pickle",
+      imagePath: "lib/images/sides/bokchoi.jpg",
+      price: 0.9,
+      category: FoodCategory.sides,
+      availableAddons:[
+      Addon(name: "Extra chesse", price: 0.99),
+      Addon(name: "Bacon", price: 1.99),
+      Addon(name: "Avocado", price: 2.99),
+       ]),
+
   ];
 
   /*
@@ -241,6 +299,9 @@ class Restaurant extends ChangeNotifier {
   */
 
     //add to carts
+    void addTocart(Food food, List<Addon>selectAddons){
+
+    }
 
     //remove from cart
 

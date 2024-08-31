@@ -5,10 +5,12 @@ import 'package:projecr_food_app/components/my_current_location.dart';
 import 'package:projecr_food_app/components/my_description_box.dart';
 
 import 'package:projecr_food_app/components/my_drawer.dart';
+import 'package:projecr_food_app/components/my_food_tile.dart';
 import 'package:projecr_food_app/components/my_silver_app_bar.dart';
 import 'package:projecr_food_app/components/my_tab_bar.dart';
 import 'package:projecr_food_app/models/food.dart';
 import 'package:projecr_food_app/models/restaurant.dart';
+import 'package:projecr_food_app/pages/food_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,15 +47,26 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
  List<Widget> getFoodInThisCategory(List<Food> fullMenu){
   return FoodCategory.values.map((category){
+
+    //get category menu
     List<Food> categoryMenu = _filterMenuByCategory(category, fullMenu);
 
   return ListView.builder(
     itemCount: categoryMenu.length,
     physics: const NeverScrollableScrollPhysics(),
+    padding: EdgeInsets.zero,
     itemBuilder: (context, index) {
-      return ListTile(
-          title: Text(categoryMenu[index].name),
-      );
+      //get individual food
+      final food = categoryMenu[index];
+      //return food tile ui
+      return FoodTile(
+        food: food,
+         onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FoodPage(food: food),
+            ),
+         ));
     },
     
     );
