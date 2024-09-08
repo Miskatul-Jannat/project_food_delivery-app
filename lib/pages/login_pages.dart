@@ -1,7 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:projecr_food_app/components/my_button.dart';
 import 'package:projecr_food_app/components/my_textfield.dart';
-import 'package:projecr_food_app/pages/home_page.dart';
+
+import 'package:projecr_food_app/services/auth/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
 final void Function()? onTap;
@@ -19,16 +22,36 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   //login method
-  void login(){
+  void login() async{
+    //get instance of auth service
+    final _authService=AuthService();
 
-    //fill out athentications....
+    //try sign in
+    try{
+      await _authService.signInWithEmailPassword(emailController.text,passwordController.text);
+    }
 
-    //navigator to home page
-    Navigator.push(
-      context,
-       MaterialPageRoute(
-        builder: (context)=> const HomePage(),
-        ));
+    //display error
+    catch(e){
+       showDialog(
+          context: context, 
+          builder: (context) => AlertDialog(title: Text(e.toString()),
+          ),
+          );
+    }
+    
+  }
+
+  //forgot password
+  void fprgotPw(){
+    showDialog(
+      context: context,
+       builder: (context) =>AlertDialog(
+        // ignore: deprecated_member_use
+        backgroundColor: Theme.of(context).colorScheme.background,
+        title: const Text("User tapped forgot password"),
+       ),
+       );
   }
 
   @override
