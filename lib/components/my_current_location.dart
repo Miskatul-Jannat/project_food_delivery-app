@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:projecr_food_app/models/restaurant.dart';
+import 'package:provider/provider.dart';
 
 class MyCurrentLocation extends StatelessWidget {
-  const MyCurrentLocation({super.key});
+  final TextEditingController textController = TextEditingController(); 
+   MyCurrentLocation({super.key, });
+  
+ 
 
   void openLocationSearchBox(BuildContext context){
+    
     showDialog(context: context, builder: (context)=>AlertDialog(
       title: const Text("Your location"),
       content: const TextField(
         decoration: InputDecoration(
-          hintText: "Search adress"
+          hintText: "Enter adress"
         ),
       ),
       actions: [
@@ -20,7 +26,14 @@ class MyCurrentLocation extends StatelessWidget {
 
           //save button
         MaterialButton(
-          onPressed: () =>Navigator.pop(context),
+          onPressed: () {
+              //update delivery adrees
+        String newAddress =textController.text;
+        context.read<Restaurant>().updateDeliveryAddress(newAddress);
+           Navigator.pop(context);
+           textController.clear();
+          },
+         
           child: const Text("save"),
           ),
       ],
@@ -33,6 +46,7 @@ class MyCurrentLocation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: Column(
@@ -47,14 +61,16 @@ class MyCurrentLocation extends StatelessWidget {
             child: Row(
               children: [
                 //adress
-                  Text
-                  ("Pabna Sador,Pabna",
-                   style: TextStyle(
-                    color: Theme.of(context).colorScheme.inversePrimary,
-                    fontWeight: FontWeight.bold
+                 Consumer<Restaurant>(
+                  builder: (context,restaurant,child) =>Text(
+                    restaurant.deliveryAddress,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.inversePrimary,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                  
+                  ),
+                 
                 //drop down menu
                 const Icon(Icons.keyboard_arrow_down_rounded),
               ],

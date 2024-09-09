@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                 color: Theme.of(context).colorScheme.secondary,
               ),
              //my current location
-              const MyCurrentLocation(),
+               MyCurrentLocation(),
 
               //description box
                 const MyDescriptionBox(),

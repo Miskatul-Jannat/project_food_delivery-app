@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -293,17 +295,24 @@ class Restaurant extends ChangeNotifier {
 
   ];
 
+
+ //user cart
+    final List<CartItem>_cart=[];
+
+   //delivery address(which user can chane or update)
+   String _deliveryAddress = 'pabna sador';
+    
   /*
   G E T T E R S
   */
   List<Food> get menu => _menu;
   List<CartItem> get cart => _cart;
+  String get deliveryAddress => _deliveryAddress;
    /*
   O P E R A T I O NS
   */
 
-    //user cart
-    final List<CartItem>_cart=[];
+   
 
     //add to carts
     void addTocart(Food food, List<Addon>selectAddons){
@@ -384,6 +393,11 @@ class Restaurant extends ChangeNotifier {
       notifyListeners();
     }
 
+    //update delivery adress
+    void updateDeliveryAddress(String newAddress){
+      _deliveryAddress=newAddress;
+      notifyListeners();
+    }
 
    /*
   H E L P E R S

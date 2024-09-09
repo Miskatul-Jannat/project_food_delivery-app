@@ -32,7 +32,7 @@ class _RegisterPageState extends State<RegisterPage> {
     if(passwordController.text == confirmPasswordController.text){
       //try creating user
       try{
-        await _authService.signInWithEmailPassword(
+        await _authService.signUpWithEmailPassword(
           emailController.text, 
           passwordController.text);
           if(mounted){

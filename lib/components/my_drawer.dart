@@ -2,11 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:projecr_food_app/components/my_deawer_tile.dart';
 import 'package:projecr_food_app/components/settings_page.dart';
 
+import 'package:projecr_food_app/services/auth/auth_service.dart';
+
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
+ void logout() {
+    final authService = AuthService();
+     authService.signout();
+ }
+ 
 
   @override
   Widget build(BuildContext context) {
+     
     return  Drawer(
       // ignore: deprecated_member_use
       backgroundColor:Theme.of(context).colorScheme.background,
@@ -50,7 +58,10 @@ class MyDrawer extends StatelessWidget {
           MyDrawerTile(
           text: "L O G O U T",
           icon: Icons.login,
-          onTap: (){},
+          onTap: (){
+            logout();
+            Navigator.pop(context);
+          },
           ),
          
          const SizedBox(height: 25,),
