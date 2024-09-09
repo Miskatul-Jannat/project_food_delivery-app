@@ -1,4 +1,4 @@
-import 'dart:ffi';
+
 
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
@@ -426,6 +426,8 @@ class Restaurant extends ChangeNotifier {
         recipt.writeln();
         recipt.writeln("Total Items: ${getTotalItemCount()}");
         recipt.writeln("Total price: ${_formatPrice(getTotalPrice())}");
+        recipt.writeln();
+        recipt.writeln("Delivering to: $deliveryAddress");
 
         return recipt.toString();
     }

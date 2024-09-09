@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projecr_food_app/components/my_cart_tile.dart';
+
 import 'package:projecr_food_app/components/my_receipt.dart';
 import 'package:projecr_food_app/models/restaurant.dart';
 import 'package:projecr_food_app/services/auth/database/firestore.dart';
